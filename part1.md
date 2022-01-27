@@ -32,9 +32,8 @@ To describe state mutations, you have to write a function that takes the previou
 
 This function is called _The Reducer_.
 
-````
+```js
 function counter(state, action) {
-
   if (typeof state === 'undefined') {
     return 0;
   }
@@ -61,23 +60,20 @@ expect(counter(1, { type: 'SOMETHING_ELSE' })).toEqual(1);
 expect(counter(undefined, {})).toEqual(0);
 
 console.log('Tests passed!');
-
-
-```js
+```
 
 Now convert the above code using switch statements and es6 arrow function:
 
-````
-
+```js
 const counter = (state = 0, action) => {
-switch (action.type) {
-case 'INCREMENT':
-return state + 1;
-case 'DECREMENT':
-return state - 1;
-default:
-return state;
-}
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
+      return state;
+  }
 };
 
 expect(counter(0, { type: 'INCREMENT' })).toEqual(1);
@@ -93,28 +89,25 @@ expect(counter(1, { type: 'SOMETHING_ELSE' })).toEqual(1);
 expect(counter(undefined, {})).toEqual(0);
 
 console.log('Tests passed!');
-
-```js
-
 ```
 
+```js
 const counter = (state = 0, action) => {
-switch (action.type) {
-case 'INCREMENT':
-return state + 1;
-case 'DECREMENT':
-return state - 1;
-default:
-return state;
-}
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
+      return state;
+  }
 };
 
 const { createStore } = Redux;
 // equivalent to:
 // var createStore = Redux.createStore;
 // import { createStore } from 'redux';
-
-```js
+```
 
 The store binds together the three principles of Redux.
 
@@ -124,11 +117,7 @@ The store binds together the three principles of Redux.
 
 3. When you create it, you need to specify the reducer that tells how state is updated with actions.
 
-```
-
-const { createStore } = Redux;
-const store = createStore(counter)
-
 ```js
-
+const { createStore } = Redux;
+const store = createStore(counter);
 ```
