@@ -32,7 +32,7 @@ To describe state mutations, you have to write a function that takes the previou
 
 This function is called _The Reducer_.
 
-`function counter(state, action) {
+```function counter(state, action) {
 
 if (typeof state === 'undefined') {
 return 0;
@@ -60,4 +60,4 @@ expect(counter(1, { type: 'SOMETHING_ELSE' })).toEqual(1);
 expect(counter(undefined, {})).toEqual(0);
 
 console.log('Tests passed!');
-`
+```
