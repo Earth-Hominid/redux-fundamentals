@@ -119,5 +119,39 @@ The store binds together the three principles of Redux.
 
 ```js
 const { createStore } = Redux;
+// var createStore = Redux.createStore;
+// import { createStore } from 'redux';
 const store = createStore(counter);
+```
+
+In this example we are calling createStore with counter as the reducer that manages the state updates. The store has three important methods.
+
+The store has three important methods.
+
+The first method is called getState() and it retrieves the current state of the redux store.
+
+```js
+console.log(store.getState()); // 0
+```
+
+The second method (most commonly used) is called dispatch. It lets you dispatch actions to change the state of your application.
+
+```js
+store.dispatch({ type: 'INCREMENT' });
+console.log(store.getState()); // 1
+```
+
+The third method is called subscribe. It lets you register a callback that that the redux store will call anytime an action has been dispatched. This allows you to update the UI of your application to reflect the current applications state.
+
+```js
+const render = () => {
+  document.body.innerText = store.getState();
+};
+
+store.subscribe(render);
+render();
+
+document.addEventListener('click', () => {
+  store.dispatch({ type: 'INCREMENT' });
+});
 ```

@@ -21,3 +21,7 @@ const { createStore } = Redux;
 // 2. It let's you dispatch actions.
 
 // 3. When you create it, you need to specify the reducer that tells how state is updated with actions.
+
+const store = createStore(counter);
+
+// In this example we are calling createStore with counter as the reducer that manages the state updates. The store has three important methods.
