@@ -1,4 +1,4 @@
-# CHAPTER 3
+# Part III
 
 ## A REACT COUNTER
 
@@ -26,7 +26,7 @@ const store = createStore(counter);
 
 The counter component is a 'dumb' component. It does not contain any business logic.
 
-It only specifies how the current application state transforms into renerable output and how the callbacks, passed via props are bound to the even handlers.
+It only specifies how the current application state transforms into renderable output and how the callbacks, passed via props are bound to the even handlers.
 
 ```js
 const Counter = ({ value, onIncrement, onDecrement }) => (

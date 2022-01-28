@@ -1,3 +1,5 @@
+# Part II
+
 In the Part One we looked at:
 
 - How to implement a simple counter example using the createStore function provided by Redux.
